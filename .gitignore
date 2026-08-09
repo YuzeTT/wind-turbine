@@ -1,0 +1,40 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.db
+
+# Go test
+*.test
+*.out
+
+# Node
+node_modules/
+dist/
+.vite/
+.vite-temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Auto-generated
+auto-imports.d.ts
+components.d.ts
+*.tsbuildinfo
+
+# Backend outputs
+backend/outputs/
+
+# Frontend env
+frontend/.env.local
+frontend/.env.*.local
