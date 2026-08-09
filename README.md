@@ -40,28 +40,28 @@
 
 ### 后端技术栈
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| Go | 1.26+ | 运行时 |
-| Gin | 1.12 | HTTP 框架 |
-| GORM | 1.31 | ORM |
-| glebarez/sqlite | 1.11 | 纯 Go SQLite 驱动（无 CGO） |
-| gorilla/websocket | 1.5 | WebSocket |
-| golang-jwt/jwt/v5 | 5.3 | JWT 认证 |
-| bcrypt | - | 密码哈希 |
+| 技术              | 版本  | 用途                        |
+| ----------------- | ----- | --------------------------- |
+| Go                | 1.26+ | 运行时                      |
+| Gin               | 1.12  | HTTP 框架                   |
+| GORM              | 1.31  | ORM                         |
+| glebarez/sqlite   | 1.11  | 纯 Go SQLite 驱动（无 CGO） |
+| gorilla/websocket | 1.5   | WebSocket                   |
+| golang-jwt/jwt/v5 | 5.3   | JWT 认证                    |
+| bcrypt            | -     | 密码哈希                    |
 
 ### 前端技术栈
 
-| 技术 | 版本 | 用途 |
-|------|------|------|
-| Vue | 3.5 | 框架 |
-| Vite | 8.1 | 构建 |
-| TypeScript | 6.0 | 类型安全 |
+| 技术         | 版本 | 用途                |
+| ------------ | ---- | ------------------- |
+| Vue          | 3.5  | 框架                |
+| Vite         | 8.1  | 构建                |
+| TypeScript   | 6.0  | 类型安全            |
 | Element Plus | 2.14 | UI 组件（按需导入） |
-| Tailwind CSS | 4.3 | 原子化 CSS |
-| Pinia | 4.0 | 状态管理 |
-| Vue Router | 5.2 | 路由 + 守卫 |
-| axios | 1.19 | HTTP 请求 |
+| Tailwind CSS | 4.3  | 原子化 CSS          |
+| Pinia        | 4.0  | 状态管理            |
+| Vue Router   | 5.2  | 路由 + 守卫         |
+| axios        | 1.19 | HTTP 请求           |
 
 ---
 
@@ -201,6 +201,7 @@ go build -o wind_turbine_backend.exe .
 ```
 
 后端启动后：
+
 - HTTP 服务：`http://localhost:8080`
 - WebSocket：`ws://localhost:8080/ws`
 - SQLite 数据库：`wind_turbine.db`（自动创建，含种子数据）
@@ -229,10 +230,10 @@ npm run build
 
 ### 默认账户
 
-| 用户名 | 密码 | 角色 | 权限 |
-|--------|------|------|------|
-| admin | admin123 | 管理员 | 全部操作 |
-| operator | op123456 | 操作员 | 只读 |
+| 用户名   | 密码     | 角色   | 权限     |
+| -------- | -------- | ------ | -------- |
+| admin    | admin123 | 管理员 | 全部操作 |
+| operator | op123456 | 操作员 | 只读     |
 
 > 删除 `wind_turbine.db` 文件重启后端可重置为默认密码。
 
@@ -242,32 +243,32 @@ npm run build
 
 ### 风机管理
 
-| 方法 | 路径 | 说明 | 权限 |
-|------|------|------|------|
-| GET | `/api/v1/turbines` | 风机列表 | 登录 |
-| GET | `/api/v1/turbines/:id` | 风机详情 | 登录 |
-| PUT | `/api/v1/turbines/:id/status` | 切换状态 | 管理员 |
+| 方法 | 路径                          | 说明     | 权限   |
+| ---- | ----------------------------- | -------- | ------ |
+| GET  | `/api/v1/turbines`            | 风机列表 | 登录   |
+| GET  | `/api/v1/turbines/:id`        | 风机详情 | 登录   |
+| PUT  | `/api/v1/turbines/:id/status` | 切换状态 | 管理员 |
 
 ### 报警管理
 
-| 方法 | 路径 | 说明 | 权限 |
-|------|------|------|------|
-| GET | `/api/v1/alarms` | 报警列表 | 登录 |
-| POST | `/api/v1/alarms` | 上报故障 | 管理员 |
-| PUT | `/api/v1/alarms/:id/resolve` | 处理报警 | 管理员 |
-| GET | `/api/v1/alarms/stats` | 报警统计 | 登录 |
+| 方法 | 路径                         | 说明     | 权限   |
+| ---- | ---------------------------- | -------- | ------ |
+| GET  | `/api/v1/alarms`             | 报警列表 | 登录   |
+| POST | `/api/v1/alarms`             | 上报故障 | 管理员 |
+| PUT  | `/api/v1/alarms/:id/resolve` | 处理报警 | 管理员 |
+| GET  | `/api/v1/alarms/stats`       | 报警统计 | 登录   |
 
 ### 看板数据
 
-| 方法 | 路径 | 说明 |
-|------|------|------|
-| GET | `/api/v1/dashboard/overview` | 总览数据 |
-| GET | `/api/v1/dashboard/status-distribution` | 状态分布饼图 |
-| GET | `/api/v1/dashboard/power-trend` | 24h 功率趋势 |
-| GET | `/api/v1/dashboard/availability` | 可用性图表 |
-| GET | `/api/v1/dashboard/wind-rose` | 风玫瑰图 |
-| GET | `/api/v1/dashboard/daily-energy` | 7 日发电量 |
-| GET | `/api/v1/dashboard/map` | 风机地图 |
+| 方法 | 路径                                    | 说明         |
+| ---- | --------------------------------------- | ------------ |
+| GET  | `/api/v1/dashboard/overview`            | 总览数据     |
+| GET  | `/api/v1/dashboard/status-distribution` | 状态分布饼图 |
+| GET  | `/api/v1/dashboard/power-trend`         | 24h 功率趋势 |
+| GET  | `/api/v1/dashboard/availability`        | 可用性图表   |
+| GET  | `/api/v1/dashboard/wind-rose`           | 风玫瑰图     |
+| GET  | `/api/v1/dashboard/daily-energy`        | 7 日发电量   |
+| GET  | `/api/v1/dashboard/map`                 | 风机地图     |
 
 ### WebSocket
 
@@ -277,29 +278,29 @@ ws://localhost:8080/ws?token=<JWT_TOKEN>
 
 消息类型：
 
-| type | 说明 | 频率 |
-|------|------|------|
-| `welcome` | 连接成功 | 连接时一次 |
+| type             | 说明         | 频率           |
+| ---------------- | ------------ | -------------- |
+| `welcome`        | 连接成功     | 连接时一次     |
 | `turbine_update` | 单台风机数据 | 逐台 80ms 错开 |
-| `heartbeat` | 心跳 | 每 5 秒 |
+| `heartbeat`      | 心跳         | 每 5 秒        |
 
 ---
 
 ## 页面功能
 
-| 页面 | 功能 |
-|------|------|
-| 登录 | 用户名/密码登录，JWT 认证 |
+| 页面     | 功能                                                           |
+| -------- | -------------------------------------------------------------- |
+| 登录     | 用户名/密码登录，JWT 认证                                      |
 | 总览看板 | 6 指标卡片 + 状态分布 + 功率趋势 + 日发电量 + 实时风机状态网格 |
-| 风机列表 | 全量表格，支持状态筛选，WS 实时更新 |
-| 风机详情 | 单机参数 + 近期报警 + 7 天统计 + 状态切换 |
-| 报警管理 | 报警列表 + 统计 + 手动上报 + 处理弹窗 |
-| 操作日志 | 操作记录列表 + 手动新增操作 |
-| 系统日志 | 系统运行日志，支持级别/模块筛选 |
-| 用户管理 | 用户列表 + 启用/禁用 + 注册新用户（管理员） |
+| 风机列表 | 全量表格，支持状态筛选，WS 实时更新                            |
+| 风机详情 | 单机参数 + 近期报警 + 7 天统计 + 状态切换                      |
+| 报警管理 | 报警列表 + 统计 + 手动上报 + 处理弹窗                          |
+| 操作日志 | 操作记录列表 + 手动新增操作                                    |
+| 系统日志 | 系统运行日志，支持级别/模块筛选                                |
+| 用户管理 | 用户列表 + 启用/禁用 + 注册新用户（管理员）                    |
 
 ---
 
 ## License
 
-MIT
+GNU General Public License v3.0
